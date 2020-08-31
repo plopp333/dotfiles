@@ -159,3 +159,6 @@ endfunction
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" vimtex default mode
+let g:tex_flavor = 'latex'
