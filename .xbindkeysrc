@@ -36,22 +36,22 @@
 
 
 #Audio Play
-"playerctl play-pause"
+"playerctl --player=spotify play-pause"
     m:0x0 + c:172
     XF86AudioPlay 
 
 #Audio Stop
-"playerctl stop"
+"playerctl --player=spotify stop"
     m:0x0 + c:174
     XF86AudioStop 
 
 #Audio Previous
-"playerctl previous"
+"playerctl --player=spotify previous"
     m:0x0 + c:173
     XF86AudioPrev 
 
 #Audio Next
-"playerctl next"
+"playerctl --player=spotify next"
     m:0x0 + c:171
     XF86AudioNext 
 
