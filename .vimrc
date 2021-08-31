@@ -96,6 +96,9 @@ syntax enable
 colorscheme tender
 let g:airline_theme = 'tender'
 
+" transparent background
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+
 " custom keybindings
 nnoremap <C-o> :FZF<enter>
 
