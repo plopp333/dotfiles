@@ -6,13 +6,32 @@ endif
 
 call plug#begin('~/.vim/vimplug')
 
+" Theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jacoborus/tender.vim'
+
+" Utilities
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'wfxr/minimap.vim', { 'do': 'yay -S code-minimap' }
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons'
+
+" Programming
+Plug 'spf13/vim-autoclose'
+Plug 'vim-syntastic/syntastic'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Python
 Plug 'tell-k/vim-autopep8'
+
+" Latex
 Plug 'lervag/vimtex'
 
 call plug#end()
