@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Python
+Plug 'cjrh/vim-conda'
 Plug 'tell-k/vim-autopep8'
 
 " Latex
