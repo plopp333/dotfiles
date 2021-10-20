@@ -23,6 +23,7 @@ Plug 'preservim/nerdtree' |
 " Programming
 Plug 'spf13/vim-autoclose'
 Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-commentary'
 
 " Git
 Plug 'tpope/vim-fugitive'
