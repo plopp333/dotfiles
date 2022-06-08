@@ -138,7 +138,7 @@ let g:fzf_colors =
 """""""""""""""""""""""""""""""""""""""
 " Coc.nvim Configuration
 """""""""""""""""""""""""""""""""""""""
-let g:coc_global_extensions = ['coc-python', 'coc-emoji', 'coc-prettier', 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin', 'coc-css', 'coc-json', 'coc-pyls', 'coc-yaml', 'coc-vimtex']
+let g:coc_global_extensions = ['coc-emoji', 'coc-prettier', 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin', 'coc-css', 'coc-json', 'coc-pyright', 'coc-yaml', 'coc-vimtex']
 
 " Better display for messages
 set cmdheight=2

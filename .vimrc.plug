@@ -10,6 +10,7 @@ call plug#begin('~/.vim/vimplug')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jacoborus/tender.vim'
+Plug 'luochen1990/rainbow'
 
 " Utilities
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -21,6 +22,7 @@ Plug 'preservim/nerdtree' |
             \ Plug 'ryanoasis/vim-devicons'
 
 " Programming
+Plug 'sheerun/vim-polyglot'
 Plug 'spf13/vim-autoclose'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-commentary'
