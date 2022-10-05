@@ -24,7 +24,8 @@ Plug 'preservim/nerdtree' |
 " Programming
 Plug 'sheerun/vim-polyglot'
 Plug 'spf13/vim-autoclose'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
 
 " Git

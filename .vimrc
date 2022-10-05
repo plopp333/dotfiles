@@ -112,7 +112,7 @@ autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
 " Vim-Airline Configuration
 """""""""""""""""""""""""""""""""""""""
 let g:airline_theme = 'tender'
-""let g:airline#extensions#tabline#anbled = 1
+let g:airline#extensions#ale#enabled = 1
 
 """""""""""""""""""""""""""""""""""""""
 " FZF Configuration
@@ -239,6 +239,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"""""""""""""""""""""""""""""""""""""""
+" ALE Configuration
+"""""""""""""""""""""""""""""""""""""""
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ }
+let g:ale_fix_on_save = 1
+let g:ale_completion_anbled = 1
 
 """""""""""""""""""""""""""""""""""""""
 " Vimtex Configuration
