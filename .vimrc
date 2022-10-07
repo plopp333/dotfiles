@@ -52,7 +52,7 @@ set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Show line numbers
-set number
+set number relativenumber
 
 " Set status line display
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
@@ -202,7 +202,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Minimap Configuration
 """""""""""""""""""""""""""""""""""""""
 let g:minimap_width = 10
-let g:minimap_auto_start = 1
+let g:minimap_auto_start = 0
 let g:minimap_auto_start_win_enter = 1
 let g:minimap_highlight = 'Visual'
 
@@ -219,6 +219,12 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == ''
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
 let g:NERDTreeShowHidden = 1
 
 """""""""""""""""""""""""""""""""""""""
@@ -231,14 +237,14 @@ let g:NERDTreeGitStatusConcealBrackets = 1
 """""""""""""""""""""""""""""""""""""""
 " Vim-syntastic Configuration
 """""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 """""""""""""""""""""""""""""""""""""""
 " ALE Configuration
