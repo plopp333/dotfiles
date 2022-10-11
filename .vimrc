@@ -8,7 +8,7 @@ set nocompatible
 filetype off
 
 " Turn on syntax highlighting.
-syntax on
+syntax enable
 
 " For plug-ins to load correctly.
 filetype plugin indent on
@@ -259,6 +259,8 @@ let g:ale_completion_anbled = 1
 " Vimtex Configuration
 """""""""""""""""""""""""""""""""""""""
 let g:tex_flavor = 'latex'
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
 """""""""""""""""""""""""""""""""""""""
 " Fix Alacritty mouse issue
