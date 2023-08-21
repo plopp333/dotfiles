@@ -164,7 +164,7 @@ exec_always --no-startup-id ~/.config/i3/xrandr.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom -CGbf
 # exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id betterlockscreen -u "~/.config/i3/wallpaper.jpg"
+exec_always --no-startup-id betterlockscreen -u ~/.config/i3/wallpaper.jpg
 exec_always --no-startup-id betterlockscreen -w
 
 # logout key binding
