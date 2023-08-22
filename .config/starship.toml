@@ -29,6 +29,9 @@ symbol = " "
 [elm]
 symbol = " "
 
+[fill]
+symbol = " "
+
 [fossil_branch]
 symbol = " "
 
