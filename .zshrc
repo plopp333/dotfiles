@@ -120,6 +120,8 @@ setxkbmap de
 
 xbindkeys
 
+alias mensa="cd ~/Documents/Development/GitHub/mensa && conda activate mensa && python3 menu.py && conda deactivate && cd ~ && curl -s https://api.topup.klarna.com/api/v1/STW_MUNSTER/cards/2028715/balance | jq -r '.balance'"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/christof/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
