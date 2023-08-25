@@ -1,3 +1,5 @@
 [user]
 	email = christof.duhme@gmail.com
 	name = Christof Duhme
+[credential]
+	helper = libsecret
