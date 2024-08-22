@@ -104,7 +104,8 @@ setxkbmap de
 
 xbindkeys
 
-alias mensa="cd ~/Documents/Development/GitHub/mensa && conda activate mensa && python3 menu.py && conda deactivate && cd ~ && curl -s https://api.topup.klarna.com/api/v1/STW_MUNSTER/cards/2028715/balance | jq -r '.balance'"
+alias la="ls -la"
+alias mensa="cd ~/Documents/Development/GitHub/mensa && micromamba activate mensa && python3 menu.py && micromamba deactivate && cd ~ && curl -s https://api.topup.klarna.com/api/v1/STW_MUNSTER/cards/2028715/balance | jq -r '.balance'"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
