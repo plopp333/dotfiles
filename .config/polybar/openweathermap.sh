@@ -3,22 +3,32 @@
 get_icon() {
     case $1 in
         # Icons for weather-icons
+        # clear sky
         01d) icon="";;
         01n) icon="";;
+        # few clouds
         02d) icon="";;
         02n) icon="";;
+        # scattered clouds
         03*) icon="";;
+        # broken clouds
         04*) icon="";;
+        # drizzle
         09d) icon="";;
         09n) icon="";;
+        # rain
         10d) icon="";;
         10n) icon="";;
+        # thunderstorm
         11d) icon="";;
         11n) icon="";;
+        # freezing rain
         13d) icon="";;
         13n) icon="";;
+        # fog
         50d) icon="";;
         50n) icon="";;
+        # everything else
         *) icon="";
 
         # Icons for Font Awesome 5 Pro
@@ -42,7 +52,7 @@ get_icon() {
 }
 
 KEY="5b3e4d2b1a1e9d453440f29c74a0a8bf"
-CITY=""
+CITY="Münster,DE"
 UNITS="metric"
 SYMBOL="°"
 
