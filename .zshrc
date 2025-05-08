@@ -107,21 +107,6 @@ xbindkeys
 alias la="ls -la"
 alias mensa="cd ~/Documents/Development/GitHub/mensa && micromamba activate mensa && python3 menu.py && micromamba deactivate && cd ~ && curl -s https://api.topup.klarna.com/api/v1/STW_MUNSTER/cards/2028715/balance | jq -r '.balance'"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/christof/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/christof/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/christof/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/christof/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
 export MAMBA_EXE='/usr/bin/micromamba';
