@@ -2,4 +2,5 @@
 .gitignore
 .gitmodules
 install.sh
+software.sh
 README.md
