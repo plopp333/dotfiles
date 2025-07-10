@@ -1,10 +1,10 @@
-colorscript -r
+# colorscript -r
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -100,11 +100,14 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 export TERM=xterm-256color
-setxkbmap de
-
-xbindkeys
+if test "$XDG_SESSION_TYPE" = "x11"
+then
+  setxkbmap de
+  xbindkeys
+fi
 
 alias la="ls -la"
+alias get-ssh-keys="~/GitHub/scripts/bitwarden_ssh.sh"
 alias mensa="cd ~/Documents/Development/GitHub/mensa && micromamba activate mensa && python3 menu.py && micromamba deactivate && cd ~ && curl -s https://api.topup.klarna.com/api/v1/STW_MUNSTER/cards/2028715/balance | jq -r '.balance'"
 
 # >>> mamba initialize >>>
