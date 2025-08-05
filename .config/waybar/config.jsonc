@@ -12,7 +12,8 @@
     "battery",
     "network",
     "cpu",
-    "memory"
+    "memory",
+    "tray"
     // "custom/docker",
     // "tray",
     // "custom/lock",
