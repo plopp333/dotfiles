@@ -108,7 +108,7 @@ fi
 
 alias la="ls -la"
 alias get-ssh-keys="~/GitHub/scripts/bitwarden_ssh.sh"
-alias mensa="cd ~/Documents/Development/GitHub/mensa && micromamba activate mensa && python3 menu.py && micromamba deactivate && cd ~ && curl -s https://api.topup.klarna.com/api/v1/STW_MUNSTER/cards/2028715/balance | jq -r '.balance'"
+alias mensa="cd ~/Documents/Development/GitHub/mensa && micromamba activate mensa && python3 mensa.py && micromamba deactivate && cd ~" # && curl -s https://api.topup.klarna.com/api/v1/STW_MUNSTER/cards/2028715/balance | jq -r '.balance'"
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
