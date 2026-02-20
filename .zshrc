@@ -1,5 +1,5 @@
 # colorscript -r
-#
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -11,15 +11,6 @@ fi
 
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
-
-# Load starship theme
-# line 1: `starship` binary as command, from github release
-# line 2: starship setup at clone(create init.zsh, completion)
-# line 3: pull behavior same as clone, source init.zsh
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -38,8 +29,6 @@ zinit snippet OMZP::ssh-agent
 autoload -Uz compinit && compinit
 
 zinit cdreplay -q
-
-eval "$(starship init zsh)"
 
 # Keybindings
 bindkey -e
@@ -69,13 +58,24 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias la="ls -la"
 alias ll='ls -ll'
 alias vim='nvim'
 alias c='clear'
+alias get-ssh-keys="~/GitHub/scripts/bitwarden_ssh.sh"
+alias mensa='( OLDPWD=$(pwd); cd ~/Documents/Development/GitHub/mensa || exit; micromamba activate mensa; python3 mensa.py; micromamba deactivate; cd "$OLDPWD" )'
+codex_search() {
+  local prompt="$*"
+  codex exec --model gpt-5.2 --cd ~/codex --skip-git-repo-check --json "$prompt" 2>/dev/null | jq -r 'select(.item.type == "agent_message") | .item.text // empty' | glow
+}
+alias '??=codex_search'
 
 # Shell integrations
+eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(micromamba shell hook --shell=zsh)"
+eval "$(direnv hook zsh)"
 
 export TERM=xterm-256color
 if test "$XDG_SESSION_TYPE" = "x11"
@@ -84,19 +84,5 @@ then
   xbindkeys
 fi
 
-alias la="ls -la"
-alias get-ssh-keys="~/GitHub/scripts/bitwarden_ssh.sh"
-alias mensa='( OLDPWD=$(pwd); cd ~/Documents/Development/GitHub/mensa || exit; micromamba activate mensa; python3 mensa.py; micromamba deactivate; cd "$OLDPWD" )'
-
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE='/usr/bin/micromamba';
-export MAMBA_ROOT_PREFIX='/home/christof/micromamba';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
-else
-    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-fi
-unset __mamba_setup
-# <<< mamba initialize <<<
+# Set vim as standard editor
+export EDITOR=vim
