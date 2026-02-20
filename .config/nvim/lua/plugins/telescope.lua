@@ -38,9 +38,11 @@ return {
 
         -- Keymaps for Telescope
         local builtin = require("telescope.builtin")
-        vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" }) -- find files
-        vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })   -- grep
-        vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })       -- buffers
+        vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })                                             -- find files
+        vim.keymap.set("n", "<leader>fa", function() builtin.find_files({ follow = true, hidden = true }) end,
+            { desc = "Telescope find all" })                                                                                                 -- find files
+        vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })                                               -- grep
+        vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })                                                   -- buffers
         vim.keymap.set("n", "<leader>fc", function()
             builtin.find_files({
                 prompt_title = "Neovim Config",

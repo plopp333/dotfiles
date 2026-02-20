@@ -24,6 +24,8 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 -- Set the leader key (used for custom shortcuts)
 vim.g.mapleader = " "
+-- Set border style for all floating windows
+vim.o.winborder = "rounded"
 
 -- ==========================
 -- Plugin Manager: lazy.nvim
