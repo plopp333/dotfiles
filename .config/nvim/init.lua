@@ -1,6 +1,4 @@
--- ==========================
--- Basic Editor Settings
--- ==========================
+-- ############################ Basic Editor Settings #############################
 -- Show absolute line numbers
 vim.opt.number = true
 -- Show relative line numbers (useful for motions like 5j, 3k)
@@ -27,9 +25,7 @@ vim.g.mapleader = " "
 -- Set border style for all floating windows
 vim.o.winborder = "rounded"
 
--- ==========================
--- Plugin Manager: lazy.nvim
--- ==========================
+-- ########################## Plugin Manager: lazy.nvim ###########################
 -- Bootstrap lazy.nvim if it is not installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -48,31 +44,25 @@ require("lazy").setup({
     require("plugins.autopairs"),
     require("plugins.catppuccin"),
     require("plugins.conform"),
+    require("plugins.gitsigns"),
     require("plugins.harpoon"),
     require("plugins.mason"),
     require("plugins.mason-lspconfig"),
     require("plugins.nvim-cmp"),
+    require("plugins.surround"),
     require("plugins.telescope"),
     require("plugins.telescope-file-browser"),
     require("plugins.treesitter"),
     require("plugins.vimtex"),
+    require("plugins.vim-fugitive"),
     require("plugins.which-key"),
-    -- require("matthias.plugins.comment"),
-    -- require("matthias.plugins.luasnip"),
-    -- require("matthias.plugins.markdown-preview"),
-    -- require("matthias.plugins.oil"),
-    -- require("matthias.plugins.surround"),
-    -- require("matthias.plugins.tabout"),
-    { "ThePrimeagen/vim-be-good" },
 })
 
--- ############################### Custom-Commands ################################
-require("commands.TSInfo") -- :TSInfo for treesitter info (filetype)
--- require("matthias.commands.SeperatorLine")  -- create Seperator Line
--- require("matthias.commands.ToggleLineNumbers")  -- toggle line numbers (relative, absolute, off)
+-- ############################### Custom Commands ################################
+require("commands.TSInfo")        -- :TSInfo for treesitter info (filetype)
+require("commands.SeperatorLine") -- create Seperator Line
 
--- ################################ Custom-Keymaps ################################
+-- ################################ Custom Keymaps ################################
 -- this must be loaded as last position after everything else
--- require("matthias.keymaps/custom")
+require("keymaps.custom")
 require("keymaps.lsp")
--- require("matthias.keymaps/tab")
