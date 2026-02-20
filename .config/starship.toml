@@ -1,5 +1,5 @@
 
-format = "$directory$git_branch$git_status$conda$line_break$character"
+format = "$directory$git_branch$git_status$conda$cmd_duration$line_break$character"
 
 [conda]
 symbol = "󰯲 "
