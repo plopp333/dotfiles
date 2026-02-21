@@ -74,7 +74,6 @@ alias '??=codex_search'
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(micromamba shell hook --shell=zsh)"
 eval "$(direnv hook zsh)"
 
 export TERM=xterm-256color
@@ -86,3 +85,8 @@ fi
 
 # Set vim as standard editor
 export EDITOR=vim
+
+# Use gpg-agent as ssh-agent
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+export GPG_TTY="$(tty)"
+gpg-connect-agent updatestartuptty /bye >/dev/null
