@@ -1,2 +1,6 @@
 auto_activate_base: false
 env_prompt: ""
+channels:
+  - conda-forge
+  - nodefaults
+channel_priority: strict
