@@ -24,6 +24,15 @@ vim.opt.wrap = false
 vim.g.mapleader = " "
 -- Set border style for all floating windows
 vim.o.winborder = "rounded"
+-- Organize imports on write
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+        vim.lsp.buf.code_action({
+            apply = true,
+            context = { only = { "source.organizeImports" } },
+        })
+    end,
+})
 
 -- ########################## Plugin Manager: lazy.nvim ###########################
 -- Bootstrap lazy.nvim if it is not installed
