@@ -4,5 +4,5 @@
 [credential]
 	helper = libsecret
 [core]
-    excludesfile = ~/.gitignore_global
+    excludesfile = ~/.config/git/gitignore
 	editor = vim
