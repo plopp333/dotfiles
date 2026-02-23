@@ -4,7 +4,7 @@ sudo pacman -S --noconfirm --needed alacritty zsh starship tmux nvim tree-sitter
 sudo pacman -S --noconfirm --needed wl-clipboard wtype cliphist
 sudo pacman -S --noconfirm --needed bitwarden-cli rofi-rbw
 sudo pacman -S --noconfirm --needed waybar rofi hyprlock brightnessctl
-sudo pacman -S --noconfirm --needed xdg-desktop-portal-gtk thunar thunar-volman gvfs
+sudo pacman -S --noconfirm --needed xdg-desktop-portal-gtk thunar thunar-volman gvfs adw-gtk-theme
 sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-font-awesome
 
 if [ -f "$HOME/.local/bin/micromamba" ]; then
