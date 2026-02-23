@@ -23,7 +23,6 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
-zinit snippet OMZP::ssh-agent
 
 # Load completions
 autoload -Uz compinit && compinit
