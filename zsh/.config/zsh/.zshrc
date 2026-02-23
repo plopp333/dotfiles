@@ -61,13 +61,7 @@ alias la="ls -la"
 alias ll='ls -ll'
 alias vim='nvim'
 alias c='clear'
-alias get-ssh-keys="~/GitHub/scripts/bitwarden_ssh.sh"
-alias mensa='( OLDPWD=$(pwd); cd ~/Documents/Development/GitHub/mensa || exit; micromamba activate mensa; python3 mensa.py; micromamba deactivate; cd "$OLDPWD" )'
-codex_search() {
-  local prompt="$*"
-  codex exec --model gpt-5.2 --cd ~/codex --skip-git-repo-check --json "$prompt" 2>/dev/null | jq -r 'select(.item.type == "agent_message") | .item.text // empty' | glow
-}
-alias '??=codex_search'
+alias get-ssh-keys='( OLDPWD=$(pwd); ~/GitHub/scripts/bitwarden_ssh.sh || exit; cd "$OLDPWD" )'
 
 # Shell integrations
 eval "$(starship init zsh)"
@@ -89,3 +83,7 @@ export EDITOR=vim
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 export GPG_TTY="$(tty)"
 gpg-connect-agent updatestartuptty /bye >/dev/null
+
+# Source host specific config if available
+HOST_CONFIG="$ZDOTDIR/${HOST}.zshrc"
+[[ -f "$HOST_CONFIG" ]] && source "$HOST_CONFIG"
