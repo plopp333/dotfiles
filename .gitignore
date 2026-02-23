@@ -1,2 +1,5 @@
 # nvim/lazy
 lazy-lock.json
+
+# zsh
+.zcompdump
