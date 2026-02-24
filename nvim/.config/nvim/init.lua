@@ -57,6 +57,7 @@ require("lazy").setup({
     require("plugins.harpoon"),
     require("plugins.mason"),
     require("plugins.mason-lspconfig"),
+    require("plugins.mason-tool-installer"),
     require("plugins.nvim-cmp"),
     require("plugins.surround"),
     require("plugins.telescope"),
