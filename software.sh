@@ -10,5 +10,5 @@ sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbo
 if [ -f "$HOME/.local/bin/micromamba" ]; then
     echo "micromamba is already installed"
 else
-    curl -sSL micro.mamba.pm/install.sh | sh
+    curl -sSL micro.mamba.pm/install.sh | INIT_YES=no CONDA_FORGE_YES=no sh
 fi
