@@ -37,7 +37,7 @@ bindkey '^[w' kill-region
 
 # History
 HISTSIZE=5000
-HISTFILE=~/.zsh_history
+HISTFILE=~/.config/zsh/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
@@ -61,7 +61,7 @@ alias la="ls -la"
 alias ll='ls -ll'
 alias vim='nvim'
 alias c='clear'
-alias get-ssh-keys='( OLDPWD=$(pwd); ~/GitHub/scripts/bitwarden_ssh.sh || exit; cd "$OLDPWD" )'
+alias get-ssh-keys='( OLDPWD=$(pwd); cd ~; ~/GitHub/scripts/bitwarden_ssh.sh || exit; cd "$OLDPWD" )'
 
 # Shell integrations
 eval "$(starship init zsh)"
