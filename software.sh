@@ -7,6 +7,12 @@ sudo pacman -S --noconfirm --needed waybar rofi hyprlock hypridle brightnessctl
 sudo pacman -S --noconfirm --needed xdg-desktop-portal-gtk thunar thunar-volman gvfs adw-gtk-theme
 sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-font-awesome
 
+if [ -f "$HOME/.config/tmux/plugins/tpm/tpm" ]; then
+    echo "tmux tpm is already installed"
+else
+    git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+fi
+
 if [ -f "$HOME/.local/bin/micromamba" ]; then
     echo "micromamba is already installed"
 else
