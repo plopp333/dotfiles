@@ -68,7 +68,7 @@ eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(direnv hook zsh)"
-eval "$(micromamba shell hook -s zsh)"
+eval "$(~/.local/bin/micromamba shell hook -s zsh)"
 
 export TERM=xterm-256color
 if test "$XDG_SESSION_TYPE" = "x11"
