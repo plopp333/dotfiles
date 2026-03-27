@@ -12,6 +12,10 @@ vim.opt.tabstop = 4
 -- Smart auto-indenting when starting a new line
 vim.opt.smartindent = true
 vim.opt.autoindent = true
+-- Wrapping lines
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 -- Use the system clipboard for yanking/pasting
 vim.opt.clipboard = "unnamedplus"
 -- Enable 24-bit RGB colors in terminal
@@ -26,50 +30,51 @@ vim.g.mapleader = " "
 vim.o.winborder = "rounded"
 -- Organize imports on write
 vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-        vim.lsp.buf.code_action({
-            apply = true,
-            context = { only = { "source.organizeImports" } },
-        })
-    end,
+	callback = function()
+		vim.lsp.buf.code_action({
+			apply = true,
+			context = { only = { "source.organizeImports" } },
+		})
+	end,
 })
 
 -- ########################## Plugin Manager: lazy.nvim ###########################
 -- Bootstrap lazy.nvim if it is not installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    require("plugins.autopairs"),
-    require("plugins.catppuccin"),
-    require("plugins.conform"),
-    require("plugins.gitsigns"),
-    require("plugins.harpoon"),
-    require("plugins.mason"),
-    require("plugins.mason-lspconfig"),
-    require("plugins.mason-tool-installer"),
-    require("plugins.nvim-cmp"),
-    require("plugins.surround"),
-    require("plugins.telescope"),
-    require("plugins.telescope-file-browser"),
-    require("plugins.treesitter"),
-    require("plugins.vimtex"),
-    require("plugins.vim-fugitive"),
-    require("plugins.which-key"),
+	require("plugins.autopairs"),
+	require("plugins.catppuccin"),
+	require("plugins.conform"),
+	require("plugins.gitsigns"),
+	require("plugins.harpoon"),
+	require("plugins.mason"),
+	require("plugins.mason-lspconfig"),
+	require("plugins.mason-tool-installer"),
+	require("plugins.nvim-cmp"),
+	require("plugins.surround"),
+	require("plugins.telescope"),
+	require("plugins.telescope-file-browser"),
+	require("plugins.treesitter"),
+	require("plugins.vimtex"),
+	require("plugins.vim-fugitive"),
+	require("plugins.which-key"),
+	require("plugins.99"),
 })
 
 -- ############################### Custom Commands ################################
-require("commands.TSInfo")        -- :TSInfo for treesitter info (filetype)
+require("commands.TSInfo") -- :TSInfo for treesitter info (filetype)
 require("commands.SeperatorLine") -- create Seperator Line
 
 -- ################################ Custom Keymaps ################################
