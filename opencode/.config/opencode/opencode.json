@@ -1,0 +1,33 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "watcher": {
+        "ignore": [
+            "node_modules",
+            "build",
+            "dist",
+            "target",
+            "vendor",
+            ".git",
+            ".cache",
+            ".next",
+            ".turbo",
+            ".venv",
+            "__pycache__",
+            "*.lock",
+            "*.min.js",
+            "*.map",
+            "*.bundle.js"
+        ]
+    },
+    "formatter": {
+        "black": {
+            "command": [
+                "~/.local/share/nvim/mason/bin/black",
+                "$FILE"
+            ],
+            "extensions": [
+                ".py"
+            ]
+        }
+    },
+}
