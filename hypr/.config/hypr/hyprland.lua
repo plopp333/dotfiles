@@ -13,6 +13,8 @@ local menu = "rofi -show drun -config ~/.config/rofi/config.rasi -theme ~/.confi
 local clipboard = "cliphist list | rofi -dmenu -i -display-columns 2 -config ~/.config/rofi/config.rasi -theme ~/.config/rofi/catppuccin.rasi | cliphist decode | wl-copy"
 local rofirbw = [[rofi-rbw --selector-args "-matching fuzzy -config ~/.config/rofi/config.rasi -theme ~/.config/rofi/catppuccin.rasi"]]
 
+hl.env("TERMINAL", terminal)
+
 hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("waybar")
