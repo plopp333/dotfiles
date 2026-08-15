@@ -20,7 +20,7 @@ vim.opt.breakindent = true
 vim.opt.clipboard = "unnamedplus"
 -- Forward Neovim yanks through tmux to the terminal client's clipboard.
 if vim.env.TMUX then
-	vim.g.clipboard = require("vim.ui.clipboard.osc52")
+	vim.g.clipboard = "osc52"
 end
 -- Enable 24-bit RGB colors in terminal
 vim.opt.termguicolors = true
