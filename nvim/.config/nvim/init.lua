@@ -26,8 +26,6 @@ end
 vim.opt.termguicolors = true
 -- Highlight the line where the cursor is
 vim.opt.cursorline = true
--- Do not wrap long lines
-vim.opt.wrap = false
 -- Set the leader key (used for custom shortcuts)
 vim.g.mapleader = " "
 -- Set border style for all floating windows
