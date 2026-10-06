@@ -25,3 +25,7 @@ I want to share some of my preferences here so we can be more aligned as we work
 - Begin each scentence on a new line.
 - In math, add spaces, for example: $A_i B_j + C_k = D_l \lambda_n$
 - Do not compile latex, unless neccessary for debugging.
+
+## Knowledge
+If I talk about a wiki, use the Obsidian MCP to look at my llm-wiki vault.
+To know how to use it, read the QUERY.md in its root folder first using the mcp.

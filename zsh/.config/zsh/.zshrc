@@ -88,3 +88,7 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 # Source host specific config if available
 HOST_CONFIG="$ZDOTDIR/${HOST}.zshrc"
 [[ -f "$HOST_CONFIG" ]] && source "$HOST_CONFIG"
+
+# Source local secrets if available
+SECRETS_FILE="$ZDOTDIR/secrets.local"
+[[ -f "$SECRETS_FILE" ]] && source "$SECRETS_FILE"

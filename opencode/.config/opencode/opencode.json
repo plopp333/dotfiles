@@ -30,4 +30,14 @@
             ]
         }
     },
+    "mcp": {
+        "obsidian": {
+            "type": "remote",
+            "url": "http://127.0.0.1:27123/mcp/",
+            "enabled": true,
+            "headers": {
+                "Authorization": "Bearer {env:OBSIDIAN_API_KEY}"
+            }
+        }
+    }
 }

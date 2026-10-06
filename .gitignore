@@ -11,3 +11,4 @@ tmux/.config/tmux/plugins
 # zsh
 .zcompdump
 .zsh_history
+secrets.local
