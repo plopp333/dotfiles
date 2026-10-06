@@ -1,27 +1,29 @@
 -- See https://wiki.hypr.land/Configuring/Start/
 
 hl.monitor({
-    output = "",
-    mode = "preferred",
-    position = "auto",
-    scale = "1.0",
+	output = "",
+	mode = "preferred",
+	position = "auto",
+	scale = "1.0",
 })
 
 local terminal = "alacritty"
 local fileManager = "thunar"
 local menu = "rofi -show drun -config ~/.config/rofi/config.rasi -theme ~/.config/rofi/catppuccin.rasi"
-local clipboard = "cliphist list | rofi -dmenu -i -display-columns 2 -config ~/.config/rofi/config.rasi -theme ~/.config/rofi/catppuccin.rasi | cliphist decode | wl-copy"
-local rofirbw = [[rofi-rbw --selector-args "-matching fuzzy -config ~/.config/rofi/config.rasi -theme ~/.config/rofi/catppuccin.rasi"]]
+local clipboard =
+	"cliphist list | rofi -dmenu -i -display-columns 2 -config ~/.config/rofi/config.rasi -theme ~/.config/rofi/catppuccin.rasi | cliphist decode | wl-copy"
+local rofirbw =
+	[[rofi-rbw --selector-args "-matching fuzzy -config ~/.config/rofi/config.rasi -theme ~/.config/rofi/catppuccin.rasi"]]
 
 hl.env("TERMINAL", terminal)
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("hypridle")
-    hl.exec_cmd("waybar")
-    hl.exec_cmd([[gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"]])
-    hl.exec_cmd([[gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"]])
-    hl.exec_cmd("wl-paste --type text --watch cliphist store")
-    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("hypridle")
+	hl.exec_cmd("waybar")
+	hl.exec_cmd([[gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"]])
+	hl.exec_cmd([[gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-dark"]])
+	hl.exec_cmd("wl-paste --type text --watch cliphist store")
+	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 end)
 
 hl.env("XCURSOR_SIZE", "24")
@@ -29,78 +31,79 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("GTK_THEME", "adw-gtk3-dark")
 
 hl.config({
-    general = {
-        gaps_in = 5,
-        gaps_out = 10,
-        border_size = 2,
-        col = {
-            active_border = {
-                colors = { "rgba(33ccffee)", "rgba(00ff99ee)" },
-                angle = 45,
-            },
-            inactive_border = "rgba(595959aa)",
-        },
-        resize_on_border = false,
-        allow_tearing = false,
-        layout = "dwindle",
-    },
-    decoration = {
-        rounding = 10,
-        rounding_power = 2,
-        active_opacity = 1.0,
-        inactive_opacity = 1.0,
-        shadow = {
-            enabled = true,
-            range = 4,
-            render_power = 3,
-            color = 0xee1a1a1a,
-        },
-        blur = {
-            enabled = true,
-            size = 3,
-            passes = 1,
-            vibrancy = 0.1696,
-        },
-    },
-    animations = {
-        enabled = true,
-    },
-    master = {
-        new_status = "master",
-    },
-    misc = {
-        force_default_wallpaper = 0,
-        disable_hyprland_logo = false,
-    },
-    input = {
-        kb_layout = "de",
-        follow_mouse = 1,
-        sensitivity = 0,
-        touchpad = {
-            natural_scroll = false,
-        },
-    },
+	general = {
+		gaps_in = 5,
+		gaps_out = 10,
+		border_size = 2,
+		col = {
+			active_border = {
+				colors = { "rgba(33ccffee)", "rgba(00ff99ee)" },
+				angle = 45,
+			},
+			inactive_border = "rgba(595959aa)",
+		},
+		resize_on_border = false,
+		allow_tearing = false,
+		layout = "dwindle",
+	},
+	decoration = {
+		rounding = 10,
+		rounding_power = 2,
+		active_opacity = 1.0,
+		inactive_opacity = 1.0,
+		shadow = {
+			enabled = true,
+			range = 4,
+			render_power = 3,
+			color = 0xee1a1a1a,
+		},
+		blur = {
+			enabled = true,
+			size = 3,
+			passes = 1,
+			vibrancy = 0.1696,
+		},
+	},
+	animations = {
+		enabled = true,
+	},
+	master = {
+		new_status = "master",
+	},
+	misc = {
+		force_default_wallpaper = 0,
+		disable_hyprland_logo = false,
+		focus_on_activate = true,
+	},
+	input = {
+		kb_layout = "de",
+		follow_mouse = 1,
+		sensitivity = 0,
+		touchpad = {
+			natural_scroll = false,
+		},
+	},
 })
 
 hl.curve("easeOutQuint", {
-    type = "bezier",
-    points = { { 0.23, 1 }, { 0.32, 1 } },
+	type = "bezier",
+	points = { { 0.23, 1 }, { 0.32, 1 } },
 })
 hl.curve("easeInOutCubic", {
-    type = "bezier",
-    points = { { 0.65, 0.05 }, { 0.36, 1 } },
+	type = "bezier",
+	points = { { 0.65, 0.05 }, { 0.36, 1 } },
 })
 hl.curve("linear", {
-    type = "bezier",
-    points = { { 0, 0 }, { 1, 1 } },
+	type = "bezier",
+	points = { { 0, 0 }, { 1, 1 } },
 })
 hl.curve("almostLinear", {
-    type = "bezier",
-    points = { { 0.5, 0.5 }, { 0.75, 1.0 } },
+	type = "bezier",
+	points = { { 0.5, 0.5 }, { 0.75, 1.0 } },
 })
 hl.curve("quick", {
-    type = "bezier",
-    points = { { 0.15, 0 }, { 0.1, 1 } },
+	type = "bezier",
+	points = { { 0.15, 0 }, { 0.1, 1 } },
 })
 
 hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
@@ -121,8 +124,8 @@ hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "al
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
 
 hl.device({
-    name = "epic-mouse-v1",
-    sensitivity = -0.5,
+	name = "epic-mouse-v1",
+	sensitivity = -0.5,
 })
 
 local mainMod = "SUPER"
@@ -147,20 +150,23 @@ hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("hyprshot -m window --clipboard-only"))
 hl.bind("CTRL + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m window"))
 
 for _, direction in ipairs({ "left", "right", "up", "down" }) do
-    hl.bind(mainMod .. " + " .. direction, hl.dsp.focus({ direction = direction }))
-    hl.bind(mainMod .. " + SHIFT + " .. direction, hl.dsp.window.move({
-        direction = direction,
-        group_aware = true,
-    }))
+	hl.bind(mainMod .. " + " .. direction, hl.dsp.focus({ direction = direction }))
+	hl.bind(
+		mainMod .. " + SHIFT + " .. direction,
+		hl.dsp.window.move({
+			direction = direction,
+			group_aware = true,
+		})
+	)
 end
 
 hl.bind(mainMod .. " + CTRL + left", hl.dsp.workspace.move({ monitor = "left" }))
 hl.bind(mainMod .. " + CTRL + right", hl.dsp.workspace.move({ monitor = "right" }))
 
 for workspace = 1, 10 do
-    local key = workspace % 10
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = workspace }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = workspace }))
+	local key = workspace % 10
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = workspace }))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = workspace }))
 end
 
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
@@ -189,30 +195,30 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), locked)
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), locked)
 
 hl.window_rule({
-    name = "suppress-maximize-events",
-    match = { class = ".*" },
-    suppress_event = "maximize",
+	name = "suppress-maximize-events",
+	match = { class = ".*" },
+	suppress_event = "maximize",
 })
 
 hl.window_rule({
-    name = "fix-xwayland-drags",
-    match = {
-        class = "^$",
-        title = "^$",
-        xwayland = true,
-        float = true,
-        fullscreen = false,
-        pin = false,
-    },
-    no_focus = true,
+	name = "fix-xwayland-drags",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = true,
+		float = true,
+		fullscreen = false,
+		pin = false,
+	},
+	no_focus = true,
 })
 
 hl.window_rule({
-    name = "thunderbird-popups",
-    match = {
-        class = "^(.*Thunderbird)$",
-        title = "^(.*(Password|Reminder|Alert).*)$",
-    },
-    float = true,
-    center = true,
+	name = "thunderbird-popups",
+	match = {
+		class = "^(.*Thunderbird)$",
+		title = "^(.*(Password|Reminder|Alert).*)$",
+	},
+	float = true,
+	center = true,
 })
